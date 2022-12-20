@@ -1,0 +1,42 @@
+#include "resource.h"
+
+#ifndef APSTUDIO_INVOKED
+#include <SDKDDKVer.h>
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include <windows.h>
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+IDI_ICON ICON "../res/astghik.ico"
+
+IDR_MENU MENUEX
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit", ID_FILE_EXIT
+    END
+    POPUP "&Toolbox"
+    BEGIN
+        MENUITEM "Cursor", ID_TOOLBOX_CURSOR
+        MENUITEM "Brush", ID_TOOLBOX_BRUSH
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "About Astghik", ID_ABOUT
+    END
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 275, 223
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "About Astghik"
+FONT 9, "Tahoma", 400, 0, 0x0
+BEGIN
+    ICON            IDI_ICON,ID_STATIC,14,164,20,20
+    CONTROL         "Astghik, ver alpha 0.3, codename ""Star""",ID_STATIC,
+                    "Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,48,159,156,8,WS_EX_TRANSPARENT
+    CONTROL         "(c) 2022 AshSys Inc. All rights reserved.",ID_STATIC,
+                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,48,170,207,9,WS_EX_TRANSPARENT
+    DEFPUSHBUTTON   "OK",IDOK,105,197,64,16,WS_GROUP
+    CONTROL         "For painters. From painters. Art must be avaliable everywhere.",ID_STATIC,
+                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,48,182,207,9,WS_EX_TRANSPARENT
+END
